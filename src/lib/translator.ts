@@ -1,7 +1,7 @@
 import { createSync, Difficulty } from 'difficulty';
 import { assignIn, chunk, zipObject } from 'lodash';
 
-const googleTranslate = require('google-translate-api');
+const googleTranslate = require('@vitalets/google-translate-api');
 
 const difficulty = createSync();
 
@@ -20,12 +20,12 @@ export class Translator {
         return difficulty.getLevel(word) >= level;
     }
 
-    public static async translate(word: string, lang = 'zh-tw') {
+    public static async translate(word: string, lang = 'zh-TW') {
         const { text } = await googleTranslate(word, { to: lang });
         return text;
     }
 
-    public static getChunkedTasks(chunks: string[][], lang = 'zh-tw'): any[] {
+    public static getChunkedTasks(chunks: string[][], lang = 'zh-TW'): any[] {
         const tasks: any[] = [];
         chunks.forEach(chunkedWords => {
             let str = '';
@@ -37,7 +37,7 @@ export class Translator {
         return tasks;
     }
 
-    public static async bulkTranslate(words: string[], lang = 'zh-tw') {
+    public static async bulkTranslate(words: string[], lang = 'zh-TW') {
         const chunks = chunk(words, 50);
         const tasks = this.getChunkedTasks(chunks, lang);
         const results = await Promise.all(tasks);
