@@ -1,6 +1,6 @@
 {
   "name": "wordwise-translation-server",
-  "version": "1.0.0.a",
+  "version": "1.0.0-a",
   "description": "A translation server with Amazon Word-Wise-like feature",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
