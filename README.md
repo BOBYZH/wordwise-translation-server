@@ -1,6 +1,10 @@
+# wordwise-translation-server
+- A translation server with Amazon Word-Wise-like feature
+- Forked from [auphone's project](https://github.com/auphone/wordwise-translation-server)
+
 ## Installation
 ```sh
-git clone https://github.com/auphone/wordwise-translation-server.git
+git clone https://github.com/BOBYZH/wordwise-translation-server.git
 cd wordwise-translation-server
 npm install
 ```
@@ -12,14 +16,14 @@ npm run build
 
 ## Run
 ```sh
-node dist/index.js
+npm run start
 ```
 
 # API
 #### GET: `/api/levels`
 Return the number of levels available in translation server
 
-#### Respnose
+#### Response
 ```js
 {
   level: 3 
@@ -35,7 +39,7 @@ Filter and translate difficult words by specific level
 {
   "level": 3,
   "words": [ "apple", "cappuccino" ],
-  "lang": "zh-tw"
+  "lang": "zh-TW"
 }
 ```
 
@@ -58,7 +62,7 @@ Filter and translate difficult words by specific level
 
 #### lang
 - Any language code supported by google translate
-- Default: `zh-tw`
+- Default: `zh-TW`
 
 #### password (Optional)
 - A super simple and configurable password in `config.json` to restrict the use of translate API
@@ -71,7 +75,7 @@ https://github.com/auphone/wordwise-chrome-extension.git
 ## License
 ISC
 
-## Author
+## Original Author
 [github/auphone](https://github.com/auphone)
 
 <br>
