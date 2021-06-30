@@ -8,7 +8,7 @@ import { Translator } from './lib/translator';
 
 const app = express();
 app.use(json());
-app.use(urlencoded({ limit: '5mb' }));
+app.use(urlencoded({ limit: '5mb', extended: true }));
 app.use(cors());
 
 // Middleware
